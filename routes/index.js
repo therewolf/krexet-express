@@ -1,8 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router()
+
+router.use('/api/patron', require('./patron-routes'))
+router.use('/api/show', require('./show-routes'))
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('index', { title: 'Express' });
 });
 
